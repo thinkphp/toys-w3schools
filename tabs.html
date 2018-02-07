@@ -59,7 +59,7 @@
 
 <div class="tab">
 <button class="tablinks" onclick="openTab(event, 'london')">London</button>
-<button class="tablinks" onclick="openTab(event, 'paris')">Paris</button>
+<button class="tablinks" onclick="openTab(event, 'paris')" id="defaultOpen">Paris</button>
 <button class="tablinks" onclick="openTab(event, 'ottawa')">Ottawa</button>
 </div>
 
@@ -89,13 +89,15 @@ function openTab(evt, tabName) {
 
          for(i = 0; i < tabLinks.length; ++i) tabLinks[i].className  = tabLinks[i].className.replace(" active", "")
 
-
          for(i = 0; i < tabContents.length; ++i) tabContents[i].style.display = "none";
 
          document.getElementById( tabName ).style.display = "block" 
 
          evt.currentTarget.className += " active"
 }
+
+document.getElementById( "defaultOpen" ).click()
+
 </script>
 
 
