@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+    padding: 32px;
+}
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.row {
+
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE 10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column {
+
+    -ms-flex: 25%;
+    flex: 50%;
+    padding: 0 4px; 
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+
+/* Style the buttons */
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: #666;
+    color: white;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header" id="myHeader">
+  <h1>Image Grid</h1>
+  <p>Click on the buttons to change the grid view.</p>
+  <button class="btn" onclick="one()">1</button>
+  <button class="btn active" onclick="two()">2</button>
+  <button class="btn" onclick="four()">4</button>
+</div>
+
+
+<div class="row">
+
+ <div class="column">
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+           <img src="ImagesModal/cliff2.jpg" style="width:100%">
+           <img src="ImagesModal/cliff3.jpg" style="width:100%">
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+           <img src="ImagesModal/cliff2.jpg" style="width:100%">
+           <img src="ImagesModal/cliff3.jpg" style="width:100%">
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+ </div>
+
+ <div class="column">
+
+           <img src="ImagesModal/cliff2.jpg" style="width:100%">
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+           <img src="ImagesModal/cliff3.jpg" style="width:100%">
+           <img src="ImagesModal/cliff2.jpg" style="width:100%">
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+ </div>
+
+ <div class="column">
+
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+           <img src="ImagesModal/cliff2.jpg" style="width:100%">
+           <img src="ImagesModal/cliff3.jpg" style="width:100%">
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+           <img src="ImagesModal/cliff2.jpg" style="width:100%">
+
+ </div>
+
+ <div class="column">
+
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+           <img src="ImagesModal/cliff2.jpg" style="width:100%">
+           <img src="ImagesModal/cliff3.jpg" style="width:100%">
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+           <img src="ImagesModal/cliff.jpg" style="width:100%">
+
+ </div>
+
+</div>
+
+<script>
+
+//declare a loop variable and then elements
+var i, elements;
+
+elements = document.getElementsByClassName("column")
+
+
+function one() {
+
+         for(i = 0; i < elements.length; ++i) elements[i].style.msFlex = "100%",
+                                              elements[i].style.flex = "100%"
+
+}
+
+function two() {
+
+         for(i = 0; i < elements.length; ++i) elements[i].style.msFlex = "50%",
+                                              elements[i].style.flex = "50%"
+}
+
+function four() {
+
+         for(i = 0; i < elements.length; ++i) elements[i].style.msFlex = "25%",
+                                              elements[i].style.flex = "25%"
+
+}
+
+//add active class to the current button (highlight it)
+var header = document.getElementById("myHeader")
+
+var btns = header.getElementsByClassName("btn")
+
+    for(i = 0; i < btns.length; ++i) btns[i].addEventListener("click", function(){
+
+           var current = document.getElementsByClassName("active")
+
+               current[0].className = current[0].className.replace(" active", "")
+   
+               this.className += " active"
+    })
+
+</script>
+
+</body>
+
+</html>
