@@ -5,7 +5,8 @@
 3. Tabs with buttons and Fade Effect https://thinkphp.github.io/toys-w3schools/tabs.html
 4. Image Modal using @keyframes https://thinkphp.github.io/toys-w3schools/ImageModal.html 
 5. Image Grid https://thinkphp.github.io/toys-w3schools/ImageGrid.html
-6. Image Grid https://thinkphp.github.io/toys-w3schools/login.html
+6. Login Modal https://thinkphp.github.io/toys-w3schools/login.html
+7. Signup Modal https://thinkphp.github.io/toys-w3schools/signup.html
 
 ## Reference
 
