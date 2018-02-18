@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+/* Set a style for Button */
+button {
+    color: #fff;
+    background-color: #4CAF50;
+    padding: 14px 20px;
+    margin: 9px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%; 
+}
+
+button:hover { 
+    opacity: 0.8
+}
+
+/* The modal background */
+.modal {
+ display: none;
+ z-index: 1;
+ position: fixed;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgb(0,0,0); /* Fallback color */
+ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+ overflow: auto 
+}
+
+.container {
+    padding: 16px;
+}
+
+.modalContent {
+  background-color: #fff;
+  margin: 5% auto 15% auto;
+  width: 80%;
+  border: 1px solid #888
+}
+
+input[type=text], input[type=password] {
+ width: 100%;
+ padding: 12px 20px; 
+ margin: 8px 0;
+ display: inline-block;
+ border: 1px solid #ccc;  
+}
+
+.imgcontainer {
+  text-align: center;
+  position: relative;
+  margin: 24px 0 12px 0;
+  
+}
+
+img.avatar {
+    width: 23%;
+    border-radius: 50%;
+}
+
+span.pass {
+    float: right;
+    padding-top: 16px;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+
+/* add zoom animation */
+
+.animate {
+       animation: animatezoom 0.6s
+}   
+
+
+@keyframes animatezoom {
+    from {
+         transform: scale(0) 
+    }
+    to {
+        transform: scale(1) 
+    }
+}
+
+.cancelbtn {
+width: auto;
+}
+
+</style>
+</head>
+<body>
+<h1>Modal Login Form</h1>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto">Login</button>
+
+ <div id="id01" class="modal">
+
+      <form class="modalContent animate" action="/sendpage.php">
+
+            <div class="imgcontainer">
+                 <span title="Close Modal" class="close" onclick="document.getElementById('id01').style.display='none'">&times;</span>
+                 <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Creative_bilal_DP.jpg" alt="Avatar" class="avatar"/>  
+            </div>
+
+            <div class="container">
+                 <label for="uname"><b>Username</b></label>
+                 <input type="text" placeholder="Enter Username" name="uname" required> 
+                 <label for="pass"><b>Password</b></label>
+                 <input type="text" placeholder="Enter Password" name="pass" required> 
+
+                 <button type="submit">Login</button>
+                 <label>
+                       <input type="checkbox" checked="checked" name="remeber">Remember me 
+                 </label>
+            </div>
+
+            <div class="container">
+                 <button type="button" style="background-color: red" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> 
+                 <span class="pass">Forgot <a href="#">password?</a></span>  
+            </div> 
+ 
+      </form>
+ </div>
+
+</body>
+</html>
