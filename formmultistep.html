@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+<title>Multiple Step Form</title>
+<style>
+
+* {box-sizing: border-box;}
+
+body {background-color: #f1f1f1}
+
+#regForm {
+         background-color: #fff;
+         margin: 100px auto;
+         font-family: Raleway;
+         width: 70%;
+         min-width: 300px;   
+         padding: 40px   
+}
+
+h1 {text-align: center}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+.tab {
+ display: none
+}
+.step {
+      width: 15px;
+      height: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      opacity: 0.5         
+}
+
+.step.active {
+
+      opacity: 1;
+}
+
+.step.finish {
+      background-color: #4CAF50;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+input.invalid {
+background-color: #ffdddd;
+}
+</style>
+</head>
+
+<body>
+
+<form id="regForm" action="server.php">
+<h1>Register: </h1>
+
+<div class="tab">Name:
+<p><input type="text" name="fname" placeholder="First name..."></p>
+<p><input type="text" name="lname" placeholder="Last name..."></p>
+</div>
+
+<div class="tab">Contact Info:
+<p><input type="text" name="email" placeholder="Email..."></p>
+<p><input type="text" name="phone" placeholder="Phone..."></p>
+</div>
+
+<div class="tab">Birthday:
+<p><input type="text" name="dd" placeholder="dd"></p>
+<p><input type="text" name="mm" placeholder="mm"></p>
+<p><input type="text" name="yyyy" placeholder="yyyy"></p>
+</div>
+
+<div class="tab">Login info:
+<p><input type="text" name="login" placeholder="login..."></p>
+<p><input type="text" name="pass" placeholder="password..."></p>
+</div>
+
+<div style="overflow: auto">
+     <div style="float: right">
+          <button type="button" id="prevBtn" onclick="nextTab(-1)">Prev</button> 
+          <button type="button" id="nextBtn" onclick="nextTab(1)">Next</button> 
+     </div>     
+</div>
+
+<!-- Circles that indicates the steps of the register form -->
+
+<div style="text-align: center;margin-top: 40px">
+     <span class="step"></span>
+     <span class="step"></span>
+     <span class="step"></span>
+     <span class="step"></span>
+</div>
+
+</form>
+
+<script>
+
+//current tab is set to be the first tab
+var _ = 0
+
+//display the current tab
+showTab(_)
+
+function showTab( n ) {
+
+         var x = document.getElementsByClassName("tab")
+
+             x[n].style.display = "block"     
+
+             if( n == 0 ) document.getElementById("prevBtn").style.display = "none"
+
+                      else document.getElementById("prevBtn").style.display = "inline"
+
+             fixStepIndicator( n ) 
+}
+
+//this function will figure out which tab to display
+function nextTab() {
+
+         var x = document.getElementsByClassName("tab")
+
+         if(!validateForm()) return false
+
+         x[_].style.display = "none"
+
+         _=_+1
+
+        showTab(_)  
+}
+
+//this function deals with validation of the form fields
+function validateForm() {
+
+         var x, 
+             y, 
+             i, 
+             valid = true;            
+
+            x = document.getElementsByClassName("tab")
+
+            y = x[_].getElementsByTagName("input")
+
+            //a loop that checks every input field in the current tab
+
+            for(i = 0; i < y.length; ++i) {
+
+                if(y[ i ].value == "") {
+
+                   y[i].className += " invalid"
+
+                   valid = false                        
+                } 
+            }       
+
+            if( valid ) document.getElementsByClassName("step")[_].className += " finish"   
+
+            return valid
+}
+
+
+function fixStepIndicator( n ) {
+
+         var i, x = document.getElementsByClassName("step")
+
+         for(i = 0; i < x.length; ++i) {
+
+             x[ i ].className = x[ i ].className.replace(" active", "")
+         } 
+
+         x[n].className += " active" 
+}
+</script>
+
+</body>
+</html>
