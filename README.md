@@ -7,7 +7,7 @@
 5. Image Grid https://thinkphp.github.io/toys-w3schools/ImageGrid.html
 6. Login Modal https://thinkphp.github.io/toys-w3schools/login.html
 7. Signup Modal https://thinkphp.github.io/toys-w3schools/signup.html
-8. Trigger Button Click on Enter
+8. Trigger Button Click on Enter https://thinkphp.github.io/toys-w3schools/trigger_button.html
 
 ## Reference
 
