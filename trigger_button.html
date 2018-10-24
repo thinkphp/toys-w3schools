@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Trigger Button click on Enter</h1>
+<p>Press the Enter inside the input field to trigger the button</p>
+<input type="text" id="myInput" value="Ironman text"></input>
+<button id="myBtn" onclick="javascript: alert('Hello Ironman!')">Running</button>
+<script>
+var $ = function(id){ return document.getElementById( id ) }
+
+var input = document.getElementById("myInput")
+
+    input.addEventListener("keyup", function(event){
+
+          event.preventDefault()   
+
+          if(event.keyCode === 13) {
+  
+                   $("myBtn").click()
+          }
+    })
+</script>
+</body>
+</html>
