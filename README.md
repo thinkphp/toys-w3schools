@@ -8,6 +8,7 @@
 6. Login Modal https://thinkphp.github.io/toys-w3schools/login.html
 7. Signup Modal https://thinkphp.github.io/toys-w3schools/signup.html
 8. Trigger Button Click on Enter https://thinkphp.github.io/toys-w3schools/trigger_button.html
+9. Trigger Button Click on Enter https://thinkphp.github.io/toys-w3schools/scrollindicator.html
 
 ## Reference
 
