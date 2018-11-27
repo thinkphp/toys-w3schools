@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Progress Bar</title>
+<style>
+
+#progressBar {
+
+ width: 100%;
+ background-color: #ddd;
+
+}
+
+#myBar {
+
+ width: 10%;
+ text-align: center;
+ background: #4CAF50;
+ height: 30px;
+ color: #fff;
+ line-height: 30px;
+
+}
+</style>
+</head>
+<body>
+<h1>JavaScript Progress Bar</h1>
+
+<div id="progressBar">
+     <div id="myBar">10%</div>
+</div>
+<button id="run">run</button>
+
+<script>
+
+var $ = function(id) { 
+ 
+    return document.getElementById(id) 
+}
+
+$("run").onclick = function() {
+
+         move()
+}
+
+function move() {
+
+         var elem = $("myBar"), 
+
+             width = 10, 
+
+             id = setInterval(frame, 10)
+
+             function frame() {
+
+                      if(width >= 100) {
+
+                         clearInterval( id )   
+
+                      } else {
+
+                        width++
+
+                        elem.style.width = width + '%'
+
+                        elem.innerHTML = width + '%'                                                 
+                      } 
+             }
+          
+}
+</script>
+</body>
+</html>
