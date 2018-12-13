@@ -16,6 +16,7 @@
 14. Coming Soon CountDown Timer       https://thinkphp.github.io/toys-w3schools/coming-soon.html
 15. Form Multiple Steps               https://thinkphp.github.io/toys-w3schools/formmultistep.html
 16. Fullscreen Video                  https://thinkphp.github.io/toys-w3schools/fullscreenvideo.html
+17. Social Login Form                 https://thinkphp.github.io/toys-w3schools/social-login.html
 
 ## Reference
 
