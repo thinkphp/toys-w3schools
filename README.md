@@ -17,7 +17,8 @@
 15. Form Multiple Steps               https://thinkphp.github.io/toys-w3schools/formmultistep.html
 16. Fullscreen Video                  https://thinkphp.github.io/toys-w3schools/fullscreenvideo.html
 17. Social Login Form                 https://thinkphp.github.io/toys-w3schools/social-login.html
-17. Read More Read Less               https://thinkphp.github.io/toys-w3schools/readmoreless.html
+18. Read More Read Less               https://thinkphp.github.io/toys-w3schools/readmoreless.html
+19. Detect Caps Lock                  https://thinkphp.github.io/toys-w3schools/detectcapslock.html
 
 ## Reference
 
