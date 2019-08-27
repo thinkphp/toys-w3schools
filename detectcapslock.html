@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Detect Caps Lock</title>
+<style>
+#capslock {display: none; color: red}
+#press {color: green}
+</style>
+</head>
+<body>
+<h3>Detect Caps Lock</h3>
+
+<h4 id="press">Press the "CAPS LOCK" key inside the input field to trigger the function</h4>
+
+<input id="myInput" value="Some text...">
+<p id="capslock">WARNING!!! Caps Lock is ON</p>
+
+<script>
+
+var $ = function( id ){return document.getElementById( id ) }
+
+var input = $("myInput"),
+
+    capslock = $("capslock")
+
+    input.addEventListener("keyup", function( event ) {
+
+          if(event.getModifierState("CapsLock")) {
+
+                   capslock.style.display = 'block'  
+
+          } else {
+
+                   capslock.style.display = 'none'
+          }
+
+    })  
+
+</script>
+</body>
+</html>
