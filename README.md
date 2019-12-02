@@ -19,6 +19,7 @@
 17. Social Login Form                 https://thinkphp.github.io/toys-w3schools/social-login.html
 18. Read More Read Less               https://thinkphp.github.io/toys-w3schools/readmoreless.html
 19. Detect Caps Lock                  https://thinkphp.github.io/toys-w3schools/detectcapslock.html
+20. Filter Components                 https://thinkphp.github.io/toys-w3schools/filtercomponents.html
 
 ## Reference
 
