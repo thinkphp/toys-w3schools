@@ -54,8 +54,9 @@ html {
 
 .active {
 
- background-color: purple;
- color: #fff;  
+ background-color:  #618685;
+ color: #111;  
+ font-size: bold
 }
 </style>
 </head>
@@ -146,6 +147,31 @@ function removeClass(element, name) {
 
           element.className = arr1.join(" ");
 }
+
+
+var btnContainer = document.getElementById("myBtnContainer"),
+
+    btns = btnContainer.getElementsByClassName("btn");
+
+    console.log(btns)  
+
+    var num_of_btns = btns.length;
+
+    for(var i = 0; i < num_of_btns; ++i)  {
+
+            btns[i].addEventListener("click", function() {
+
+                   var curr = btnContainer.getElementsByClassName("active");
+
+                       curr[0].className = curr[0].className.replace("active","");
+
+                       this.className+= " active"  
+            })
+    }
+
+      
+
+
 
 </script>
 </body>
