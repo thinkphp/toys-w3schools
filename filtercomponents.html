@@ -38,7 +38,7 @@ html {
   position: relative;
   margin-right: 20px;
   margin-bottom: 20px;
-
+  display: none;
 }
 
 
@@ -46,16 +46,27 @@ html {
 .blue {background-color: lightblue}
 .orange {background-color: orange}
 .all {background-color: khaki}
+
+.show {
+
+ display: block; 
+}
+
+.active {
+
+ background-color: purple;
+ color: #fff;  
+}
 </style>
 </head>
 <body>
 <h2>Filter Components </h2>
 <!-- Control buttons -->
 <div id="myBtnContainer">
-<button class="btn all" onclick="filterSelection('all')">Transilvania</button>
-<button class="btn green active" onclick="filterSelection('brasov')">Brasov</button>
+<button class="btn all active" onclick="filterSelection('all')">Transilvania</button>
+<button class="btn green" onclick="filterSelection('brasov')">Brasov</button>
 <button class="btn blue" onclick="filterSelection('sibiu')">Sibiu</button>
-<button class="btn orange">Sighisoara</button>
+<button class="btn orange" onclick="filterSelection('harghita')">Harghita</button>
 </div>
 
 <!-- Filterable elements components divs whatever you want. Note that some have multiple class names. this can be used if they belong to multiple categories. -->
@@ -74,6 +85,68 @@ html {
 <div class="filterComp sibiu">Cristian</div>
 <div class="filterComp sibiu">Cisnadie</div>
 <div class="filterComp sibiu">Paltinis</div>
+<div class="filterComp harghita">Santimbru</div>
+<div class="filterComp harghita">Homorod</div>
+<div class="filterComp harghita">Vlahita</div>
 </div>
+
+<script>
+
+//How to Filter Components
+// Step 1. Create Filterable Elements
+// Step 2. Add HTML
+// Step 3. Add CSS
+// Step 4. Add JavaScript
+
+
+function filterSelection(sel) {
+
+         var f = document.getElementsByClassName("filterComp")
+             size = f.length;
+
+         if(sel == "all") sel = ""      
+
+         for(var i = 0; i < size; ++i) {
+
+                 removeClass(f[i], "show")
+
+                 if(f[i].className.indexOf(sel) > -1) addClass(f[i], "show")
+         }
+}
+
+function addClass(element, name) {
+
+         var i, arr1, arr2;
+
+         arr1 = element.className.split(" ");     
+
+         arr2 = name.split(" ");
+
+         for(i = 0; i < arr2.length; ++i) {
+
+             if(arr1.indexOf(arr2[i]) == -1) element.className += " " + arr2[i]  
+         }  
+}	
+
+function removeClass(element, name) {
+
+         var i, arr1, arr2;
+
+         arr1 = element.className.split(" ");
+
+         arr2 = name.split(" ");
+
+         for(i = 0; i < arr2.length; ++i) 
+
+                 while(arr1.indexOf(arr2[i]) > -1) {
+
+                       arr1.splice(arr1.indexOf(arr2[i]),1) 
+
+                 } 
+
+          element.className = arr1.join(" ");
+}
+
+</script>
 </body>
 </html>
