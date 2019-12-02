@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Filter Components using CSS and JS</title>
+<style>
+
+* {
+  margin: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+html {
+  font: 18px/1.65 sans-serif;
+  text-align: center;
+}
+
+
+.btn {
+
+ width: 20%;
+ border: 2px solid #333;
+ line-height: 60px;
+ margin: 0 1% 20px 1%;
+}
+
+.container {
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filterComp {
+
+  display: inline-block;
+  padding: 10px;
+  border: 2px solid #333;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+}
+
+
+.green {background-color: lightgreen}
+.blue {background-color: lightblue}
+.orange {background-color: orange}
+.all {background-color: khaki}
+</style>
+</head>
+<body>
+<h2>Filter Components </h2>
+<!-- Control buttons -->
+<div id="myBtnContainer">
+<button class="btn all" onclick="filterSelection('all')">Transilvania</button>
+<button class="btn green active" onclick="filterSelection('brasov')">Brasov</button>
+<button class="btn blue" onclick="filterSelection('sibiu')">Sibiu</button>
+<button class="btn orange">Sighisoara</button>
+</div>
+
+<!-- Filterable elements components divs whatever you want. Note that some have multiple class names. this can be used if they belong to multiple categories. -->
+<div class="container">
+<div class="filterComp brasov">Cristian</div>
+<div class="filterComp brasov">Sanpetru</div>
+<div class="filterComp brasov">Sacele</div>
+<div class="filterComp brasov">Bunloc</div>
+<div class="filterComp brasov">Dambu Morii</div>
+<div class="filterComp brasov">Bartolomeu</div>
+<div class="filterComp brasov">Ghimbav</div>
+<div class="filterComp brasov">Rasnov</div>
+<div class="filterComp brasov">Bran</div>
+<div class="filterComp brasov">Paraul Rece</div>
+<div class="filterComp brasov">Racadau</div>
+<div class="filterComp sibiu">Cristian</div>
+<div class="filterComp sibiu">Cisnadie</div>
+<div class="filterComp sibiu">Paltinis</div>
+</div>
+</body>
+</html>
